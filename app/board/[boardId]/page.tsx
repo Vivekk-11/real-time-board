@@ -10,7 +10,6 @@ interface Props {
 }
 
 const BoardIdPage = ({ params: { boardId } }: Props) => {
-  return <Loading />;
   return (
     <Room roomId={boardId} fallback={<Loading />}>
       <Canvas boardId={boardId} />;
