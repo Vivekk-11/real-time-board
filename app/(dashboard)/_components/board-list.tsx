@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const BoardList = ({ query, orgId }: Props) => {
-  const data = useQuery(api.boards.get, { orgId });
+  const data = useQuery(api.boards.get, { orgId, ...query });
 
   if (data === undefined) {
     return (
@@ -59,9 +59,13 @@ export const BoardList = ({ query, orgId }: Props) => {
           <BoardCard
             key={board._id}
             id={board._id}
+            //@ts-ignore
             title={board.title}
+            //@ts-ignore
             imageUrl={board.imageUrl}
+            //@ts-ignore
             authorId={board.authorId}
+            //@ts-ignore
             authorName={board.authorName}
             createdAt={board._creationTime}
             orgId={board.orgId}
