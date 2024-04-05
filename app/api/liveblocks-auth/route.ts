@@ -39,7 +39,7 @@ export const POST = async (req: Request) => {
     }
 
     const { body, status } = await session.authorize();
-    return NextResponse.json(body, { status });
+    return new Response(body, { status });
   } catch (error) {
     return NextResponse.json("Something went wrong, please try again!", {
       status: 500,
