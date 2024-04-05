@@ -11,7 +11,7 @@ interface Props {
 export const Canvas = ({ boardId }: Props) => {
   return (
     <main className="bg-neutral-100 touch-none relative w-full h-full">
-      <Info />
+      <Info boardId={boardId} />
       <Participants />
       <Toolbar />
     </main>
