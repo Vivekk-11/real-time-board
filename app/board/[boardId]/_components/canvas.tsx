@@ -32,6 +32,7 @@ import {
 import { LiveObject } from "@liveblocks/client";
 import { LayerPreview } from "./layer-preview";
 import { SelectionBox } from "./selection-box";
+import { SelectionTools } from "./selection-tools";
 
 interface Props {
   boardId: string;
@@ -256,6 +257,7 @@ export const Canvas = ({ boardId }: Props) => {
         undo={history.undo}
         redo={history.redo}
       />
+      <SelectionTools setLastUsedColor={setLastUsedColor} camera={camera} />
       <svg
         onWheel={onWheel}
         onPointerMove={onPointerMove}
