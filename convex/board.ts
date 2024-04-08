@@ -81,8 +81,6 @@ export const update = mutation({
     if (title.length > 60)
       throw new Error("Title cannot be longer than 60 characters.");
 
-    console.log(title, "Title");
-
     await ctx.db.patch(args.id, {
       title,
     });
